@@ -1,0 +1,100 @@
+.contents__chat{
+    width: calc(100vw - 300px);
+    float: right;
+    height: 100vh;
+   &__header{
+    height: 100px;
+    padding: 0px 40px;
+     .edit-group-button{
+         height: 40px;
+         margin-top: 28px;
+         padding: 10px 20px 0px;
+         float: right;
+         border: 2px solid $sky-blue-color;
+         a{
+          color: $sky-blue-color;
+         }
+        }
+     h2{
+      padding-top: 35px;
+      font-size: 20px;
+      color: #333333;
+     }
+     p{
+      padding-top: 15px;
+      font-size: 12px;
+      color: $subtext-font-color;
+     }
+    }
+   &__content{
+     border-top: 1px solid #eeeeee ;
+     background-color: #AAAAAA;
+     padding: 0px 40px;
+     height: calc(100vh - 100px);
+     position: relative;
+      &__messages{
+       h3{
+        font-size: 16px;
+        color: $message-font-color;
+        font-weight: bold;
+        padding-top:40px;
+        float: left;
+        }
+       h4{
+        font-size: 12px;
+        color: $subtext-font-color;
+        float: left;
+        padding-top:40px;
+        padding-left: 10px;
+        }
+       p{
+        font-size: 14px;
+        color: $message-font-color;
+        padding-top: 10px;
+        clear: both;
+      }
+      }
+      form{
+       height: 90px;
+       width: 100%;
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       background-color: gray;
+         textarea{
+          font-size: 16px;
+          padding: 15px 0px 15px 10px;
+          height: 20px;
+          float: left;
+          margin: 20px 0px 20px 40px;
+          border: none;
+          resize: none;
+          width: calc(100% - 40px - 40px - 80px - 40px - 10px - 15px);
+          color: $message-font-color;
+          }
+         i{
+          margin-top: 20px;
+          padding: 15px 10px;
+          background-color: white;
+          height: 20px;
+          width: 20px;
+          border: none;
+          float: left;
+          }
+         label{
+          input{
+           display: none;
+          }
+          }
+         input{
+           background-color: $sky-blue-color;
+           color: white;
+           float: right;
+           margin: 20px 40px 20px 0px;
+           padding: 15px 20px;
+           width: 80px;
+           border:none;
+          }
+      }
+    }
+}

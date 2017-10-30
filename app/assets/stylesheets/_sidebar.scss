@@ -1,0 +1,37 @@
+.contents__sidebar {
+    width: 300px;
+    float: left;
+    &__header{
+    background-color: #253141;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px ;
+    h2{
+      color: $side_bar_font-color;
+      font-size: 16px;
+      font-weight: bold;
+       i{
+       line-height: 100px;
+       color: $side_bar_font-color;
+       float: right;
+     }
+     }
+    }
+    &__contents{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 0 20px ;
+    h3{
+      color: $side_bar_font-color;
+      font-size: 15px;
+      padding-top: 20px;
+    }
+    p{
+      color: $side_bar_font-color;
+      font-size: 11px;
+      padding-top: 5px;
+      padding-bottom: 20px;
+     }
+    }
+}
+
