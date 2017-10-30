@@ -7,11 +7,11 @@
     background-color: #253141;
     height: 100px;
     line-height: 100px;
+    padding: 0 20px ;
     h2{
       color: $side_bar_font-color;
       font-size: 16px;
       font-weight: bold;
-      padding: 0 20px ;
        i{
        line-height: 100px;
        color: $side_bar_font-color;
@@ -22,16 +22,17 @@
     .contents__sidebar__contents{
     background-color: #2f3e51;
     height: 100vh;
-    padding-top: 20px;
+    padding: 0 20px ;
     h3{
       color: $side_bar_font-color;
       font-size: 15px;
-      padding: 0 20px 5px;
+      padding-top: 20px;
     }
     p{
       color: $side_bar_font-color;
       font-size: 11px;
-      padding: 0 20px 40px 20px;
+      padding-top: 5px;
+      padding-bottom: 20px;
      }
     }
 }
