@@ -4,7 +4,7 @@
     width: calc(100vw - 300px);
     float: right;
     height: 100vh;
-   .contents__chat__header{
+   &__header{
     height: 100px;
     padding: 0px 40px;
      .edit-group-button{
@@ -28,12 +28,13 @@
       color: #999999;
      }
     }
-   .contents__chat__contents{
+   &__content{
      border-top: 1px solid #eeeeee ;
      background-color: #AAAAAA;
      padding: 0px 40px;
      height: calc(100vh - 100px);
      position: relative;
+      &__messages{
        h3{
         font-size: 16px;
         color: #434A54;
@@ -41,26 +42,27 @@
         padding-top:40px;
         float: left;
         }
-      h4{
+       h4{
         font-size: 12px;
         color: #999999;
         float: left;
         padding-top:40px;
         padding-left: 10px;
         }
-      p{
+       p{
         font-size: 14px;
         color: #434A54;
         padding-top: 10px;
         clear: both;
       }
-     form{
-      height: 90px;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-color: gray;
+      }
+      form{
+       height: 90px;
+       width: 100%;
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       background-color: gray;
          textarea{
           font-size: 16px;
           padding: 15px 0px 15px 10px;
@@ -70,7 +72,7 @@
           border: none;
           resize: none;
           width: calc(100% - 40px - 40px - 80px - 40px - 10px - 15px);
-         }
+          }
          i{
           margin-top: 20px;
           padding: 15px 10px;
@@ -79,10 +81,10 @@
           width: 20px;
           border: none;
           float: left;
-         }
+          }
          input{
           display: none;
-         }
+          }
          a{
             background-color: $sky-blue-color;
             color: white;
