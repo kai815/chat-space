@@ -51,3 +51,11 @@
       sample(日付)
      %p
       sample(メッセージ)
+    .contents__chat__contents__send-button
+     %form
+      .image_icon
+       %label{for: "icon_image"}
+        %i.fa.fa-file-image-o
+         %input{type: "file", id: "icon_image"}
+      %textarea{placeholder: "try a messsage"}
+      =link_to "Send",""
