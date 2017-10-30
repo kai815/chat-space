@@ -23,7 +23,7 @@
      p{
       padding-top: 15px;
       font-size: 12px;
-      color: #999999;
+      color: $subtext-font-color;
      }
     }
    &__content{
@@ -35,21 +35,21 @@
       &__messages{
        h3{
         font-size: 16px;
-        color: #434A54;
+        color: $message-font-color;
         font-weight: bold;
         padding-top:40px;
         float: left;
         }
        h4{
         font-size: 12px;
-        color: #999999;
+        color: $subtext-font-color;
         float: left;
         padding-top:40px;
         padding-left: 10px;
         }
        p{
         font-size: 14px;
-        color: #434A54;
+        color: $message-font-color;
         padding-top: 10px;
         clear: both;
       }
@@ -70,6 +70,7 @@
           border: none;
           resize: none;
           width: calc(100% - 40px - 40px - 80px - 40px - 10px - 15px);
+          color: $message-font-color;
           }
          i{
           margin-top: 20px;
