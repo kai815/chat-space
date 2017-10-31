@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.update(user_params) if current_user.id == user.id
 
-    redirect_to  controller: :messages, action: :index
+    redirect_to root_path
   end
 
   private
