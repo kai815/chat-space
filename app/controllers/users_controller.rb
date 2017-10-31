@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(user_params) if current_user.id = user.id
+    user.update(user_params) if current_user.id == user.id
 
     redirect_to  "/"
   end
