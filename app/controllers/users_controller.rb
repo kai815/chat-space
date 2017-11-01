@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def edit
-    @user = current_user
   end
 
   def update
@@ -10,7 +9,7 @@ class UsersController < ApplicationController
        if user.update(user_params)
          redirect_to root_path
        else
-        redirect_to(:back)
+        render action: :edit
        end
     end
   end
