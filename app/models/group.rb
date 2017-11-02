@@ -3,5 +3,5 @@ class Group < ApplicationRecord
   has_many :members
   has_many :messages
 
-  varidates, :name, presence :true
+  validates :name, presence: true
 end

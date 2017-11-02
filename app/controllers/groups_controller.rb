@@ -4,7 +4,12 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
   def create
-    Group.create(create_group)
+    @group = Group.new(create_group)
+    if @group.save
+      redirect_to root_path, notice:"グループの作成に成功しました"
+    else
+      render 'new'
+    end
   end
   def edit
   end
