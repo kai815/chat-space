@@ -3,7 +3,7 @@
   .contents__sidebar
    .contents__sidebar__header
     %h2
-     = @user.name
+     = current_user.name
      =link_to "" do
       %i.fa.fa-cog
      =link_to new_group_path do

@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
 
   def index
-    @user = current_user
     @groups = current_user.groups
   end
 
@@ -36,4 +35,6 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name, user_ids: [])
   end
+
+
 end
