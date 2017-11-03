@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :find_group, only: [:edit, :update]
 
   def index
     @groups = current_user.groups
@@ -18,11 +19,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    group_find
   end
 
   def update
-    group_find
     if @group.update(group_params)
       redirect_to root_path, notice:"グループを編集しました"
     else
@@ -36,7 +35,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, user_ids: [])
   end
 
-  def group_find
+  def find_group
     @group = Group.find(params[:id])
   end
 
