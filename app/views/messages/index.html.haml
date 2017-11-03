@@ -1,48 +1,25 @@
-%header
- .contents
-  .contents__sidebar
-   .contents__sidebar__header
-    %h2
-     sample(ユーザー名)
-     =link_to "" do
-      %i.fa.fa-cog
-     =link_to new_group_path do
-      %i.fa.fa-pencil-square-o
-   .contents__sidebar__contents
+= render "groups/index"
+.contents__chat
+ .contents__chat__header
+  .edit-group-button
+   =link_to "Edit", ""
+  %h2
+   = @group.name
+  %p
+ .contents__chat__content
+  .contents__chat__content__messages
+   - @group.messages.each do | message |
     %h3
-     sample(グループ名)
+     = message.user.name
+    %h4
+     = message.created.at
     %p
-     sample(メッセージ)
-    %h3
-     sample(グループ名)
-    %p
-     sample(メッセージ)
-  .contents__chat
-   .contents__chat__header
-    .edit-group-button
-     =link_to "Edit", ""
-    %h2
-     sample(グループ名)
-    %p
-     sample(メンバー)
-   .contents__chat__content
-    .contents__chat__content__messages
-     %h3
-      sample(ユーザー名)
-     %h4
-      sample(日付)
-     %p
-      sample(メッセージ)
-    .contents__chat__content__messages
-     %h3
-      sample(ユーザー名)
-     %h4
-      sample(日付)
-     %p
-      sample(メッセージ)
-    = form_for [@group, @message] do | f |
-     = f.text_area :body, placeholder: "try a message"
-     %label{for: "up_image"}
-      %i.fa.fa-file-image-o
-      = f.file_field :image, id: "up_image"
-     = f.submit value: "Send"
+     = message.body
+    = message.image
+  = form_for [@group, @message] do | f |
+   = f.text_area :body, placeholder: "try a message"
+   %label{for: "up_image"}
+    %i.fa.fa-file-image-o
+    = f.file_field :image, id: "up_image"
+   = f.submit value: "Send"
+
