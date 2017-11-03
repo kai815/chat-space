@@ -40,9 +40,9 @@
       sample(日付)
      %p
       sample(メッセージ)
-    %form
-     %textarea{placeholder: "try a messsage"}
+    = form_for [@group, @message] do | f |
+     = f.text_area :body, placeholder: "try a message"
      %label{for: "up_image"}
       %i.fa.fa-file-image-o
-      %input{type: "file", id: "up_image"}
-     %input{type: "submit", value: "Send"}
+      = f.file_field :image, id: "up_image"
+     = f.submit value: "Send"
