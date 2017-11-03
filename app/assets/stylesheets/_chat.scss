@@ -39,6 +39,7 @@
         font-weight: bold;
         padding-top:40px;
         float: left;
+        clear: both;
         }
        h4{
         font-size: 12px;
@@ -52,7 +53,10 @@
         color: $message-font-color;
         padding-top: 10px;
         clear: both;
-      }
+        }
+       img{
+        float: left;
+       }
       }
       form{
        height: 90px;
