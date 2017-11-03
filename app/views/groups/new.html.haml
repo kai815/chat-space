@@ -4,9 +4,10 @@
     - if @group.errors.any?
       .chat-group-form__errors
         %h2
-          エラーが発生しました。
-          %ul
-            %li 名前を入力してください。
+          = @group.errors.count
+          件エラーが発生しました。
+        %ul
+          %li グループ名を入力してください。
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         %label.chat-group-form__label{:for => "chat_group_name"} グループ名
