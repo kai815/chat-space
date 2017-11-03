@@ -15,7 +15,7 @@
      = message.created_at
     %p
      = message.body
-    =image_tag message.image_url(:thumb)
+    =image_tag message.image_url(:thumb) if message.image_url(:thumb)
   = form_for [@group, @message] do | f |
    = f.text_area :body, placeholder: "try a message"
    %label{for: "up_image"}
