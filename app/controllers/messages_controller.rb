@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.save
-    redirecto_to group_messages_path
+    redirect_to group_messages_path
   end
 
   private
