@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
   end
+
   def create
     @group = Group.new(create_group)
     if @group.save
@@ -11,12 +12,15 @@ class GroupsController < ApplicationController
       render 'new'
     end
   end
+
   def edit
   end
+
   def update
   end
 
   private
+
   def create_group
     params.require(:group).permit(:name, user_ids: [])
   end
