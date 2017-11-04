@@ -8,14 +8,7 @@
   %p
  .contents__chat__content
   .contents__chat__content__messages
-   - @group.messages.each do | message |
-    %h3
-     = message.user.name
-    %h4
-     = message.created_at
-    %p
-     = message.body
-    =image_tag message.image_url(:thumb) if message.image_url(:thumb)
+   = render @messages
   = form_for [@group, @message] do | f |
    = f.text_area :body, placeholder: "try a message"
    %label{for: "up_image"}
