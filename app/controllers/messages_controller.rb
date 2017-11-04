@@ -2,14 +2,19 @@ class MessagesController < ApplicationController
 
   def index
     @group = Group.find(params[:group_id])
+    @messages = @group.messages
     @groups = current_user.groups
     @message = Message.new
   end
 
   def create
     @message = Message.new(message_params)
-    @message.save
+    if @message.save
     redirect_to group_messages_path
+    else
+    render 'index'
+    end
+
   end
 
   private
