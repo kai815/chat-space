@@ -61,3 +61,6 @@ end
 gem "font-awesome-rails"
 gem "pry-rails"
 gem "devise"
+gem "carrierwave"
+gem "mini_magick", require: "mini_magick"
+

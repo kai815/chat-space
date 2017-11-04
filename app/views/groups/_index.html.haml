@@ -1,0 +1,16 @@
+%header
+ .contents
+  .contents__sidebar
+   .contents__sidebar__header
+    %h2
+     = current_user.name
+     =link_to "" do
+      %i.fa.fa-cog
+     =link_to new_group_path do
+      %i.fa.fa-pencil-square-o
+   .contents__sidebar__contents
+    - @groups.each do |group|
+     %h3
+      = group.name
+     %p
+      メッセージはありません

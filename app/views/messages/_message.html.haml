@@ -1,0 +1,7 @@
+%h3
+ = message.user.name
+%h4
+ = message.created_at
+%p
+ = message.body
+=image_tag message.image_url(:thumb) if message.image_url(:thumb)
