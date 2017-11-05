@@ -10,9 +10,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-     redirect_to group_messages_path
+     redirect_to group_messages_path, notice:"メッセージを送信しました"
     else
-     redirect_to :back
+     redirect_to :back, alert:"メッセージを入力してください"
     end
 
   end
