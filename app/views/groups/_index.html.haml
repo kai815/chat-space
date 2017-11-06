@@ -4,13 +4,19 @@
    .contents__sidebar__header
     %h2
      = current_user.name
-     =link_to "" do
+     =link_to "/users/#{params[:user_id]}/edit" do
       %i.fa.fa-cog
      =link_to new_group_path do
       %i.fa.fa-pencil-square-o
    .contents__sidebar__contents
     - @groups.each do |group|
-     %h3
-      = group.name
-     %p
-      メッセージはありません
+     - if group.messages.present?
+      %h3
+       = link_to "#{group.name}", "/groups/#{group.id}/messages"
+      %p
+       = link_to "#{group.messages.last.body}", "/groups/#{group.id}/messages"
+     - else
+      %h3
+       = link_to "#{group.name}", "/groups/#{group.id}/messages"
+      %p
+       = link_to "メッセージはありません", "/groups/#{group.id}/messages"
