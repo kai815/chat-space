@@ -2,7 +2,7 @@
 .contents__chat
  .contents__chat__header
   .edit-group-button
-   =link_to "Edit", ""
+   =link_to "Edit", "/groups/#{params[:group_id]}/edit"
   %h2
    = @group.name
   %p
