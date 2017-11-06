@@ -9,10 +9,10 @@
  .contents__chat__content
   .contents__chat__content__messages
    = render @messages
-  = form_for [@group, @message] do | f |
-   = f.text_area :body, placeholder: "try a message"
-   %label{for: "up_image"}
-    %i.fa.fa-file-image-o
-    = f.file_field :image, id: "up_image"
-   = f.submit value: "Send"
+ = form_for [@group, @message] do | f |
+  = f.text_area :body, placeholder: "try a message"
+  %label{for: "up_image"}
+   %i.fa.fa-file-image-o
+   = f.file_field :image, id: "up_image"
+  = f.submit value: "Send"
 
