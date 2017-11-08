@@ -18,7 +18,6 @@ FactoryGirl.define do
       group_id        1
       user_id         1
       image {Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg'))}
-      # image File.open("#{Rails.root}/spec/fixtures/test")
     end
 
 end
