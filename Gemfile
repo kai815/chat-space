@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'faker'
 end
 
 group :development do
@@ -66,8 +67,5 @@ gem "devise"
 gem "carrierwave"
 gem "mini_magick", require: "mini_magick"
 
-group :test do
-  gem 'faker'
-end
 
 gem 'rails-controller-testing'
