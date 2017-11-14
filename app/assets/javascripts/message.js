@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
   $(function() {
     function buildHTML(message){
-      console.log(message.image)
       var html = `<div class = "contents__chat__content__messages">
                     <div class = "messaeges_user">
                       ${ message.user_name }
@@ -21,7 +20,7 @@ $(document).on('turbolinks:load', function() {
     $('#new_message').on('submit', function(e){
       e.preventDefault();
       var formData = new FormData(this);
-      var url = window.location.href
+      var url = window.location.href;
       $.ajax({
         url: url,
         type: "POST",
