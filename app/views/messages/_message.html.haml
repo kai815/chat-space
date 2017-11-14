@@ -1,7 +1,8 @@
-%h3
+.messaeges_user
  = message.user.name
-%h4
+.messages_date
  = message.created_at
-%p
+.messages_content
  = message.body
-=image_tag message.image_url(:thumb) if message.image_url(:thumb)
+.messages_image
+ =image_tag message.image_url(:thumb) if message.image_url(:thumb)
