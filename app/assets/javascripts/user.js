@@ -56,7 +56,6 @@ $(document).on('turbolinks:load', function() {
     });
 
     $("#user-search-result").on("click", ".user-search-add", function() {
-          console.log(this);
           var add_user_name = $(this).data("user-name");
           var add_user_id = $(this).data("user-id");
           appendGroupMember(add_user_name, add_user_id);
@@ -64,7 +63,6 @@ $(document).on('turbolinks:load', function() {
       });
 
     $("#chat-group-users").on("click", ".chat-group-user__btn--remove",function(){
-      console.log(this)
       $(this).parent().remove()
     });
   });
