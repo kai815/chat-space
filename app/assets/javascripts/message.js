@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function() {
                       <img src="${message.image.url}">
                     </div>`;
       }
-      var html = `<div class = "chat_message" data-message-id=${message.id}>
+      var html = `<div class = "chat_message" id=${message.id}>
                     <div class = "messaege_user">
                       ${ message.user_name }
                     </div>
@@ -30,7 +30,8 @@ $(document).on('turbolinks:load', function() {
           dataType: 'json',
         })
         .done(function(json) {
-          var id = $('.chat_message').data('message-id');
+          var array_of_messages = $('.chat_message')
+          var id = array_of_messages[array_of_messages.length-1].getAttribute('data-message-id')
           var insertHTML = '';
           json.messages.forEach(function(message) {
             if (message.id > id ) {
@@ -41,7 +42,7 @@ $(document).on('turbolinks:load', function() {
           $('.contents__chat__content').stop().animate({
             scrollTop: $(document).height()
         })
-          console.log('自動更新に成功しました')
+
 
         })
         .fail(function(json) {
@@ -65,7 +66,7 @@ $(document).on('turbolinks:load', function() {
       })
       .done(function(data) {
         var html = buildHTML(data);
-        $('.contents__chat__content__messages').prepend(html)
+        $('.contents__chat__content').append(html)
         $('#message_body').val('')
         $('.contents__chat__content').stop().animate({
             scrollTop: $(document).height()

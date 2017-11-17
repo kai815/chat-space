@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages.order("id DESC")
+    @messages = @group.messages.order("id ASC")
     respond_to do |format|
       format.html
       format.json
