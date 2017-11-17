@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function() {
       })
       .done(function(data) {
         var html = buildHTML(data);
-        $('.contents__chat__content').append(html)
+        $('.contents__chat__content__messages').prepend(html)
         $('#message_body').val('')
         $('.contents__chat__content').stop().animate({
             scrollTop: $(document).height()
