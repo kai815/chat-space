@@ -1,22 +1,56 @@
 $(document).on('turbolinks:load', function() {
   $(function() {
+
     function buildHTML(message){
-      var html = `<div class = "contents__chat__content__messages">
-                    <div class = "messaeges_user">
+      var insertImage = '';
+      if (message.image.url) {
+      insertImage = `<div class = "message_image">
+                      <img src="${message.image.url}">
+                    </div>`;
+      }
+      var html = `<div class = "chat_message" data-message-id=${message.id}>
+                    <div class = "messaege_user">
                       ${ message.user_name }
                     </div>
-                    <div class = "messages_date">
+                    <div class = "message_date">
                       ${ message.created_at }
                     </div>
-                    <div class = "messages_content">
+                    <div class = "message_content">
                       ${ message.body }
                     </div>
-                    <div class = "messages_image">
-                      <img src =${ message.image.url }>
-                    </div>
+                    ${insertImage}
                   </div>`
       return html;
     }
+
+    var interval = setInterval(function() {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+        $.ajax({
+          url: location.href,
+          dataType: 'json',
+        })
+        .done(function(json) {
+          var id = $('.chat_message').data('message-id');
+          var insertHTML = '';
+          json.messages.forEach(function(message) {
+            if (message.id > id ) {
+              insertHTML += buildHTML(message);
+            }
+          });
+          $('.contents__chat__content__messages').append(insertHTML);
+          $('.contents__chat__content').stop().animate({
+            scrollTop: $(document).height()
+        })
+          console.log('自動更新に成功しました')
+
+        })
+        .fail(function(json) {
+          alert('自動更新に失敗しました');
+        });
+    } else {
+          clearInterval(interval);
+      }} , 5 * 1000 );
+
     $('#new_message').on('submit', function(e){
       e.preventDefault();
       var formData = new FormData(this);
@@ -41,5 +75,7 @@ $(document).on('turbolinks:load', function() {
       alert('error');
       })
     })
+
   });
 });
+
