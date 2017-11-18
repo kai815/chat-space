@@ -34,6 +34,7 @@
      position: relative;
      overflow: scroll;
       &__messages{
+        padding-bottom: 100px;
       .chat_message{
         .messaege_user{
           font-size: 16px;
@@ -50,7 +51,7 @@
           padding-top:40px;
           padding-left: 10px;
         }
-        .message_content{
+        .message_body{
           font-size: 14px;
           color: $message-font-color;
           padding-top: 10px;

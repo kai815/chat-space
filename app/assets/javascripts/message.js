@@ -5,14 +5,14 @@ $(document).on('turbolinks:load', function() {
       insertImage = (message.image_url)? `<div class = "message_image">
                                             <img src="${message.image.url}">
                                           </div>`:'';
-      var html = `<div class = "chat_message" id=${message.id}>
+      var html = `<div class = "chat_message" data-message-id=${message.id}>
                     <div class = "messaege_user">
                       ${ message.user_name }
                     </div>
                     <div class = "message_date">
                       ${ message.created_at }
                     </div>
-                    <div class = "message_content">
+                    <div class = "message_body">
                       ${ message.body }
                     </div>
                     ${insertImage}
@@ -36,11 +36,9 @@ $(document).on('turbolinks:load', function() {
             }
           });
           $('.contents__chat__content__messages').append(insertHTML);
-          $('.contents__chat__content').stop().animate({
-            scrollTop: $(document).height()
-        })
-
-
+          $('.contents__chat__content').animate({
+            scrollTop: $('.contents__chat__content')[0].scrollHeight
+        }, 1000);
         })
         .fail(function(json) {
           alert('自動更新に失敗しました');
@@ -63,11 +61,11 @@ $(document).on('turbolinks:load', function() {
       })
       .done(function(data) {
         var html = buildHTML(data);
-        $('.contents__chat__content').append(html)
+        $('.contents__chat__content__messages').append(html)
         $('#message_body').val('')
-        $('.contents__chat__content').stop().animate({
-            scrollTop: $(document).height()
-        })
+        $('.contents__chat__content').animate({
+            scrollTop: $('.contents__chat__content')[0].scrollHeight
+        },'normal');
       })
       .fail(function(){
       alert('error');
