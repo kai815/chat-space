@@ -3,7 +3,7 @@
   = message.user.name
  .message_date
   = message.created_at
- .message_content
+ .message_body
   = message.body
  .messages_image
   = image_tag message.image_url(:thumb) if message.image_url(:thumb)
