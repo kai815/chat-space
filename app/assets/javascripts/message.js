@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function() {
   $(function() {
 
     function buildHTML(message){
-      insertImage = (message.image_url)? `<div class = "message_image">
+      insertImage = (message.image.url)? `<div class = "message_image">
                                             <img src="${message.image.url}">
                                           </div>`:'';
       var html = `<div class = "chat_message" data-message-id=${message.id}>
