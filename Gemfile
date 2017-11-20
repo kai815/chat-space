@@ -65,10 +65,15 @@ gem "carrierwave"
 gem "mini_magick", require: "mini_magick"
 
 group :test do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
 
 end
 
-gem 'rails-controller-testing'
+group :production do
+  gem 'unicorn'
+end
+
+
