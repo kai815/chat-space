@@ -2,21 +2,21 @@ $(document).on('turbolinks:load', function() {
   $(function() {
 
     function buildHTML(message){
-      insertImage = (message.image.url)? `<div class = "message_image">
-                                            <img src="${message.image.url}">
-                                          </div>`:'';
-      var html = `<div class = "chat_message" data-message-id=${message.id}>
-                    <div class = "messaege_user">
-                      ${ message.user_name }
-                    </div>
-                    <div class = "message_date">
-                      ${ message.created_at }
-                    </div>
-                    <div class = "message_body">
-                      ${ message.body }
-                    </div>
-                    ${insertImage}
-                  </div>`
+      insertImage = (message.image.url)? '<div class = "message_image">'+
+                                            '<img src=' + message.image.url +'>'+
+                                          '</div>':'';
+      var html = '<div class = "chat_message" data-message-id= '+ message.id +' >'+
+                    '<div class = "messaege_user">'
+                      + message.user_name +
+                    '</div>'+
+                    '<div class = "message_date">'
+                      + message.created_at +
+                    '</div>'+
+                    '<div class = "message_body">'
+                      + message.body +
+                    '</div>'
+                    + insertImage +
+                  '</div>'
       return html;
     }
 
