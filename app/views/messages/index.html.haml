@@ -6,6 +6,9 @@
   %h2
    = @group.name
   %p
+   Member : 
+   - @group.users.each do |user|
+    = user.name
  .contents__chat__content
   .contents__chat__content__messages
    = render @messages
