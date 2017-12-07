@@ -7,3 +7,7 @@
   = message.body
  .message_image
   = image_tag message.image_url(:thumb) if message.image_url(:thumb)
+ - if current_user.id == message.user_id
+  .message_delete_buturn
+   %a{"data-method" => "delete", :href => "/groups/#{@group.id}/messages/#{message.id}"}
+    Delete
