@@ -24,6 +24,12 @@ class MessagesController < ApplicationController
 
   end
 
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy if @message.user_id == current_user.id
+    redirect_to group_messages_path(params[:group_id]), notice: 'メッセージを削除しました'
+  end
+
   private
 
   def message_params
