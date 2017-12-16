@@ -33,12 +33,12 @@ $(document).on('turbolinks:load', function() {
           json.messages.forEach(function(message) {
             if (message.id > id ) {
               insertHTML += buildHTML(message);
-            }
-          });
-          $('.contents__chat__content__messages').append(insertHTML);
+              $('.contents__chat__content__messages').append(insertHTML);
           $('.contents__chat__content').animate({
             scrollTop: $('.contents__chat__content')[0].scrollHeight
         }, 1000);
+            }
+          });
         })
         .fail(function(json) {
           alert('自動更新に失敗しました');
