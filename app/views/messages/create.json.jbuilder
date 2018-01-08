@@ -3,3 +3,5 @@ json.user_name @message.user.name
 json.created_at @message.created_at
 json.image @message.image
 json.id       @message.id
+json.group_id @group.id
+json.user_id @message.user_id
